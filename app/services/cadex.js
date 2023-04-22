@@ -8,8 +8,23 @@ const cadexService = {
     const verb = getRandomValueFromArray(parts.verbs);
     const complement = getRandomValueFromArray(parts.complements);
 
-    return `${name} ${adjective} ${verb} ${complement}`;
+    const cadexItem = {
+      name: name,
+      adjective: adjective,
+      verb: verb,
+      complement: complement
+    }
+
+    return cadexItem;
   },
+
+  glue(cadexItem) {
+
+    const gluedCadex = `${cadexItem.name} ${cadexItem.adjective} ${cadexItem.verb} ${cadexItem.complement}`;
+
+    return gluedCadex;
+  }
 };
+
 
 module.exports = cadexService;
